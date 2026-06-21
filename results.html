@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Hello {{ name }} 👋</h1>
+
+    <h2>Your Carbon Footprint</h2>
+
+    <div class="card">
+        <h3>{{ carbon }} kg CO₂</h3>
+    </div>
+
+    <h2>Eco Score</h2>
+
+    <div class="card">
+        <h3>{{ eco_score }}/100</h3>
+        <p>{{ category }}</p>
+    </div>
+
+    <h2>Recommendations</h2>
+
+    <ul>
+        {% for recommendation in recommendations %}
+        <li>{{ recommendation }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">
+        <button>Calculate Again</button>
+    </a>
+
+</div>
+
+</body>
+</html>

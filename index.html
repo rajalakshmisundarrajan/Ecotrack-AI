@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EcoTrack AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌍 EcoTrack AI</h1>
+    <h2>Carbon Footprint Awareness Assistant</h2>
+
+    <form action="/calculate" method="POST">
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Transport Mode</label>
+        <select name="transport">
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+            <option value="walk">Walk</option>
+        </select>
+
+        <label>Distance Travelled (km)</label>
+        <input type="number" name="distance" required>
+
+        <label>Electricity Usage (units/month)</label>
+        <input type="number" name="electricity" required>
+
+        <label>Diet Type</label>
+        <select name="diet">
+            <option value="veg">Vegetarian</option>
+            <option value="nonveg">Non-Vegetarian</option>
+        </select>
+
+        <button type="submit">Calculate</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
